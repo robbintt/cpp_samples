@@ -20,5 +20,9 @@ int main() {
 
     Color y { Color::red };
 
+    // allowed as of c++17
     Color z{2};
+
+    // doesn't work, as expected
+    //Color aa = 2;
 };
