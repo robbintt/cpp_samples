@@ -4,7 +4,7 @@ DEPS=$(SOURCES:.cpp=.d)
 BINS=$(SOURCES:.cpp=)
 
 CFLAGS+=-MMD
-CXXFLAGS+=-MMD -std=c++17 -Wall
+CXXFLAGS+=-MMD -std=c++17 -Wall -Wextra
 #CXX = c++ # untestted, can i put c++17 here?
 
 .PHONY: all
