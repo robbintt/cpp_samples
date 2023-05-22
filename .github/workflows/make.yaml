@@ -22,8 +22,13 @@ jobs:
         sudo apt-get install -y build-essential clang cmake
 
     - name: Build and Run
-      run: |  
+      run: |
         cd tour_2nd_stroustrup
-        cmake .
-        make
+        if [ -f "CMakeLists.txt" ]; then
+          cmake .
+          make
+        else
+          make
+          #clang++ -std=c++17 -O3 -Wall -Wextra -o main *.cpp
+        fi
         ./main
