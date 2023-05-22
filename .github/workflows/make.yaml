@@ -23,6 +23,7 @@ jobs:
 
     - name: Build and Run
       run: |  
+        cd tour_2nd_stroustrup
         cmake .
         make
         ./main
