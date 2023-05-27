@@ -3,9 +3,11 @@
 cd gpt4
 if [ -f "CMakeLists.txt" ]; then
   cmake .
-  make
+  make my_program
+  make my_tests
 else
-  make
+  make my_program
+  make my_tests
   #clang++ -std=c++17 -O3 -Wall -Wextra -o main *.cpp
 fi
-./fibonacci 
+./my_tests
