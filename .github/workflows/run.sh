@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -ex
+
 cd gpt4
 if [ -f "CMakeLists.txt" ]; then
   cmake .

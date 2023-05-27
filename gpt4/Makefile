@@ -1,6 +1,8 @@
 # Variables
-CC=g++
-CFLAGS=-Isrc -Itest -Wall
+#CC=g++
+# move to LLVM
+CC=clang++
+CFLAGS=-Isrc -Itest -Wall -std=c++20
 LIBS=-lm
 SRCS=$(wildcard src/*.cpp)
 OBJS=$(patsubst src/%.cpp, src/%.o, $(SRCS))
