@@ -4,6 +4,6 @@
 
 int main() {
     testFibonacci();
-    //std::cout << fibonacci(10) << "\n";
+    std::cout << "Tests completed without exception (no assert failed)\n";
     return 0;
 }
