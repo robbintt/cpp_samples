@@ -3,4 +3,4 @@
 set -ex
 
 sudo apt-get update
-sudo apt-get install -y build-essential clang cmake clang-format clang-tidy
+sudo apt-get install -y build-essential clang cmake clang-format clang-tidy bear
