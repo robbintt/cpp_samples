@@ -9,19 +9,19 @@ void testComplex() {
     my_complex::Complex c2(3.0, 4.0);
 
     // Test addition
-    Complex c3 = c1 + c2;
+    my_complex::Complex c3 = c1 + c2;
     assert(c3.real == 4.0 && c3.imag == 6.0);
 
     // Test subtraction
-    Complex c4 = c1 - c2;
+    my_complex::Complex c4 = c1 - c2;
     assert(c4.real == -2.0 && c4.imag == -2.0);
 
     // Test multiplication
-    Complex c5 = c1 * c2;
+    my_complex::Complex c5 = c1 * c2;
     assert(c5.real == -5.0 && c5.imag == 10.0);
 
     // Test division
-    Complex c6 = c1 / c2;
+    my_complex::Complex c6 = c1 / c2;
     assert(c6.real == 11.0 / 25.0 && c6.imag == 2.0 / 25.0);
 
     // Test equality
