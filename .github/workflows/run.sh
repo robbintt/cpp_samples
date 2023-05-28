@@ -12,4 +12,5 @@ else
   make my_tests
   #clang++ -std=c++17 -O3 -Wall -Wextra -o main *.cpp
 fi
+./my_program
 ./my_tests
