@@ -21,3 +21,9 @@ jobs:
 
     - name: Build and Run
       run: ./.github/workflows/run.sh
+
+    - name: Lint with clang-tidy
+      run: ./.github/workflows/lint.sh
+
+    - name: Format with clang-format
+      run: ./.github/workflows/format.sh
