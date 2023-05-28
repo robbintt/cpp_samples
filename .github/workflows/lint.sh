@@ -5,9 +5,10 @@ exit_status=0
 cd gpt4
 
 # Generate the compile_commands.json file
-mkdir -p build
 # will this exit 1 if it doesn't make the file?
-bear --output compile_commands.json -- make
+make clean
+bear --output compile_commands.json -- make my_program my_tests
+
 
 find . -name '*.cpp' | while read -r file; do
   clang_tidy_output=$(clang-tidy -p=./compile_commands.json --checks='*' --warnings-as-errors='*' "$file")
