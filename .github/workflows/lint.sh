@@ -25,3 +25,5 @@ find . -name '*.cpp' | while read -r file; do
     exit_status=1
   fi
 done
+
+exit $exit_status
