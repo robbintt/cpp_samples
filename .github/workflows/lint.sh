@@ -2,6 +2,8 @@
 
 exit_status=0
 
+cd gpt4
+
 # Generate the compile_commands.json file
 mkdir -p build
 # will this exit 1 if it doesn't make the file?
