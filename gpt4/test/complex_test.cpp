@@ -1,7 +1,7 @@
 #include <cassert>
 #include <iostream>
 #include <sstream>
-#include "complex.h"
+#include <my_complex.h>
 
 // Test function
 void testComplex() {
