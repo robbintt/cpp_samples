@@ -2,4 +2,4 @@
 #include <string>
 
 std::vector<std::string> generateTestData(int numWords);
-void triePerformanceTest();
+void TriePerformanceTest();
