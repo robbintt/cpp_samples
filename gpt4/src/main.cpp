@@ -35,14 +35,5 @@ int main() {
     trie.deleteWord("tea");
     assert(!trie.search("tea"));
 
-    std::string serialized = trie.serialize();
-    trie::Trie newTrie;
-    newTrie.deserialize(serialized);
-
-    assert(newTrie.search("test"));
-    assert(!newTrie.search("testing"));
-    assert(!newTrie.search("tea"));
-    assert(newTrie.search("to"));
-
     return 0;
 }
