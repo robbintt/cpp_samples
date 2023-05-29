@@ -3,6 +3,7 @@
 #include "fibonacci_test.h"
 #include <my_complex.h>
 #include "complex_test.h"
+#include "trie_perf_test.h"
 
 int main() {
 
@@ -12,6 +13,7 @@ int main() {
     testComplex();
     std::cout << "complex.h completed without exception or failed assertion.\n";
 
-    return 0;
+    TriePerformanceTest();
 
+    return 0;
 }
