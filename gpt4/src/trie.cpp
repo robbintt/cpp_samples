@@ -1,4 +1,4 @@
-#include "Trie.h"
+#include "trie.h"
 #include <iostream>
 
 namespace trie {
