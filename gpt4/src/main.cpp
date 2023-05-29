@@ -3,6 +3,8 @@
 #include "my_complex.h"
 #include "trie.h"
 
+#include <cassert>
+
 int main() {
     //fibonacci.cpp
     std::cout << fibonacci(10) << "\n";
