@@ -1,23 +1,32 @@
+#ifndef TRIE_H
+#define TRIE_H
+
 #include <unordered_map>
 #include <string>
 
-struct TrieNode {
-    std::unordered_map<char, TrieNode*> children;
-    bool isEndOfWord;
+namespace trie {
 
-    TrieNode();
-    ~TrieNode();
-};
+    struct TrieNode {
+        std::unordered_map<char, TrieNode*> children;
+        bool isEndOfWord;
 
-class Trie {
-public:
-    TrieNode* root;
+        TrieNode();
+        ~TrieNode();
+    };
 
-    Trie();
-    ~Trie();
+    class Trie {
+    public:
+        TrieNode* root;
 
-    void insert(std::string word);
-    bool search(std::string word);
-    bool remove(TrieNode* node, std::string word, int depth = 0);
-    void deleteWord(std::string word);
-};
+        Trie();
+        ~Trie();
+
+        void insert(std::string word);
+        bool search(std::string word);
+        bool remove(TrieNode* node, std::string word, int depth = 0);
+        void deleteWord(std::string word);
+    };
+
+} // namespace trie
+
+#endif // TRIE_H
