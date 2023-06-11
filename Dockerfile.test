@@ -1,0 +1,20 @@
+# Base image with dependencies and setup
+FROM ubuntu:latest AS base
+
+# for some reason this is available in github's ubuntu-latest...
+RUN apt-get update && \
+    apt-get install -y sudo
+
+COPY ./.github/workflows/setup.sh /setup/
+WORKDIR /setup
+RUN ./setup.sh
+
+# Final image with code
+FROM base
+
+COPY . /app
+WORKDIR /app
+
+CMD ["./.github/workflows/run.sh"] && \
+    ["./.github/workflows/lint.sh"] && \
+    ["./.github/workflows/format.sh"]
