@@ -4,14 +4,26 @@
 
 namespace hamt {
 
+    // Add a destructor definition for HAMTNode
+    HAMTNode::~HAMTNode() {
+        delete trieNode;
+    }
+
     void HAMT::insert(std::string word) {
         std::size_t hash = std::hash<std::string>{}(word);
         trie::Trie trie;
+
         if (root.find(hash) != root.end()) {
             trie.root = root[hash]->trieNode;
         }
         trie.insert(word);
-        root[hash] = new HAMTNode(trie.root, hash);
+
+        // Update the trieNode pointer in the HAMTNode after inserting the word
+        if (root.find(hash) != root.end()) {
+            root[hash]->trieNode = trie.root;
+        } else {
+            root[hash] = new HAMTNode(trie.root, hash);
+        }
     }
 
     bool HAMT::search(std::string word) {
@@ -34,7 +46,7 @@ namespace hamt {
         trie.deleteWord(word);
         if (trie.root->children.empty()) {
             delete trie.root;
-            delete root[hash];
+            delete root[hash]; // Delete HAMTNode before removing it from the map
             root.erase(hash);
         } else {
             root[hash]->trieNode = trie.root;
