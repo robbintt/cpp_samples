@@ -4,6 +4,7 @@
 #include <my_complex.h>
 #include "complex_test.h"
 #include "trie_perf_test.h"
+#include <hamt.h>
 #include "hamt_tests.h"
 
 int main() {
