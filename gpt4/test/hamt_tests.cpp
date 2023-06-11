@@ -4,7 +4,7 @@
 #include <hamt.h>
 #include "hamt_tests.h"
 
-void test_insert_search() {
+void test_insert_search(hamt::HAMT& h) {
     hamt::HAMT h;
     std::vector<std::string> words = {
         "apple", "banana", "cherry", "orange", "pear", "grape", "kiwi"};
@@ -20,7 +20,7 @@ void test_insert_search() {
     assert(!h.search("nonexistent"));
 }
 
-void test_deletion() {
+void test_deletion(hamt::HAMT& h) {
     hamt::HAMT h;
     std::vector<std::string> words = {
         "apple", "banana", "cherry", "orange", "pear", "grape", "kiwi"};
@@ -36,7 +36,7 @@ void test_deletion() {
     assert(!h.search("banana"));
 }
 
-void test_memory_management() {
+void test_memory_management(hamt::HAMT& h) {
     hamt::HAMT h1;
     hamt::HAMT h2;
 

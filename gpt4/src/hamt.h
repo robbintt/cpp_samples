@@ -12,6 +12,7 @@ namespace hamt {
         std::size_t hash;
 
         HAMTNode(trie::TrieNode* node, std::size_t h) : trieNode(node), hash(h) {}
+        ~HAMTNode();
     };
 
     class HAMT {

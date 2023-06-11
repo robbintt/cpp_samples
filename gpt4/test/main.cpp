@@ -18,12 +18,12 @@ int main() {
     TriePerformanceTest();
     std::cout << "TriePerformanceTest completed without exception or failed assertion.\n";
 
-    test_insert_search();
-    test_deletion();
-    test_memory_management();
+    hamt::HAMT* h = new hamt::HAMT;
+    test_insert_search(*h);
+    test_deletion(*h);
+    test_memory_management(*h);
+    delete h;
     std::cout << "HAMT tests completed without exception or failed assertion.\n";
-
-
 
     return 0;
 }
