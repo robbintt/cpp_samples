@@ -31,6 +31,7 @@ public:
   }
   */
 
+  /* todo - implement copy/move
   // ch 5.2.2
   Vector(const Vector& a);              // copy constructor
   Vector& operator=(const Vector& a);   // copy assignment
@@ -39,13 +40,14 @@ public:
   // IMPORTANT: move is initiated when rvalue is used in either: constructor OR right hand side of an argument
   // stadard library move() doesn't move, it just uses rvalue and follows same mechanics, "like a cast"
   Vector& operator=(Vector&& a);        // move assignment
-
+  */
 
   // put reserve() logic back where it came from
   void push_back(double v) {
     if (_size == _capacity) {
       reserve(_capacity == 0 ? 8 : 2 * _capacity);
     }
+    elem[_size++] = v;
   }
 
   int size() const {
