@@ -1,5 +1,6 @@
 #include <initializer_list>
 #include <algorithm>
+#include <iostream>
 
 /* Ch 4.2 vector
  *
@@ -68,6 +69,18 @@ public:
   ~Vector() { delete[] elem; }
 
   double& operator[](int i);
+
+  void print() const {
+    std::cout << "[";
+    for (int i = 0; i < _size; ++i) {
+      std::cout << elem[i];
+      if (i < _size  - 1) {
+        std::cout << ", ";
+      }
+    }
+    std::cout << "]\n";
+  }
+
 private:
   double* elem;
   int _size;
