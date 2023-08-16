@@ -70,7 +70,12 @@ public:
 
   ~Vector() { delete[] elem; }
 
-  double& operator[](int i);
+  double& operator[](int i) {
+    if (i < 0 || i >= _size) {
+        throw std::out_of_range("Index out of bounds");
+    }
+    return elem[i];
+  }
 
   void print() const {
     std::cout << "[";
