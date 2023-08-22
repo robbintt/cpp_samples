@@ -1,14 +1,13 @@
 # Variables
 CC=clang++
-CFLAGS=-Isrc -Itest -Wall -std=c++20
-SANITIZE_COMMON_FLAGS=-fsanitize=thread -fsanitize=undefined
-ASAN_FLAGS=-fsanitize=address $(SANITIZE_COMMON_FLAGS)
-MSAN_FLAGS=-fsanitize=memory $(SANITIZE_COMMON_FLAGS)
+CFLAGS=-Isrc -Itest -Wall -std=c++20 -Werror -pedantic
 LIBS=-lm
 SRCS=$(wildcard src/*.cpp)
 OBJS=$(patsubst src/%.cpp, src/%.o, $(SRCS))
 ASAN_OBJS=$(patsubst src/%.cpp, src/%.asan.o, $(SRCS))
 MSAN_OBJS=$(patsubst src/%.cpp, src/%.msan.o, $(SRCS))
+TSAN_OBJS=$(patsubst src/%.cpp, src/%.tsan.o, $(SRCS))
+UBSAN_OBJS=$(patsubst src/%.cpp, src/%.ubsan.o, $(SRCS))
 TEST_SRCS=$(wildcard test/*.cpp)
 TEST_OBJS=$(patsubst test/%.cpp, test/%.o, $(TEST_SRCS))
 
@@ -20,7 +19,7 @@ src/%.o: src/%.cpp
 test/%.o: test/%.cpp
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-# ASan objects (lsan included)
+# ASan objects (LSan included)
 src/%.asan.o: src/%.cpp
 	$(CC) -c -o $@ $< $(CFLAGS) -fsanitize=address
 
