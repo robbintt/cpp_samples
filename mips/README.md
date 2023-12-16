@@ -12,7 +12,10 @@
 - note that openwrt has its own build root: https://openwrt.org/docs/guide-developer/toolchain/crosscompile
   - but i don't know how to use it with c++17
   - probably it's not that bad but may have limitations
-  - also some c hello world example here, but not c++17: https://openwrt.org/docs/guide-developer/helloworld/chapter2
+  - also some c hello world example here, but not c++17: 
+    - https://openwrt.org/docs/guide-developer/helloworld/start
+    - build: https://openwrt.org/docs/guide-developer/helloworld/chapter2
+    - package for openwrt: https://openwrt.org/docs/guide-developer/helloworld/chapter3
 
 
 # Methodology
