@@ -9,14 +9,17 @@
 #CC=mips-unknown-linux-musl-g++ -std=c++20 -static-libstdc++
 # now we need to dynamic link all with gcc older version
 # no more support for c++20
-CC=mips-unknown-linux-musl-g++ -std=c++17
+#CC=mips-unknown-linux-musl-g++ -std=c++17
+# now with the openwrt toolchain from the 21.02.0 SDK, maybe 23 will finally have c++21 or later
+CC=mips-openwrt-linux-musl-g++ -std=c++17
 # move to LLVM
 ##CC=clang++ -stdlib=libstdc++
 # use mips
 #CC=clang++ -std=c++20
 #CFLAGS=-Isrc -Itest -Wall -Os
 CFLAGS=-Isrc -Itest -Wall -Os
-LDFLAGS=-Wl,--dynamic-linker,/lib/ld-musl-mips-sf.so.1
+# LDFLAGS is only needed for crosstool-ng, not the openwrt standard toolchain
+#LDFLAGS=-Wl,--dynamic-linker,/lib/ld-musl-mips-sf.so.1
 #CFLAGS=-Isrc -Itest -Wall -std=c++20 -O3 -S -target mips -mcpu=mips32
 LIBS=-lm
 SRCS=$(wildcard src/*.cpp)

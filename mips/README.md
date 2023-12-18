@@ -18,7 +18,26 @@
     - package for openwrt: https://openwrt.org/docs/guide-developer/helloworld/chapter3
 
 
-# Methodology
+# OpenWRT Toolchain Methodology (recommended)
+
+time cost: very low
+
+Not guaranteed compatible forwards between OpenWRT versions on the same host, although c++ does guarantee. Likely brittle points are dynamic linker, anything gcc related.
+
+
+1. Get the tarball for either `toolchain` or `sdk`, and grep your g++ `filepath` and `filename`
+2. Add the `bin/` folder in this `filepath` to your path with the shell script to add to path
+3. Fix the makefile to have the `filename` for g++ in your bin/
+4. make clean && make
+5. Copy to your openwrt and go
+6. consider learning how to use the SDK to compile opkg for openwrt install process
+
+
+# Crosstool-ng Methodology (not recommended)
+
+time cost: not too high with included crosstool .config, but not low.
+
+Compatibility may suffer, brittle.
 
 
 ## Prep OpenWRT install for cpp
